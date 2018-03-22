@@ -15,9 +15,11 @@ using namespace std;
 #define PRN(X) std::cout << X << std::endl
 #define TRC(x) cout << #x << ": " << x << endl
 
-bool string_ok(string s)
+bool string_ok(const string& s)
 {
 	string result;
+
+	if (s.size() < 2) return true;
 
 	for (auto iter = s.begin(); iter != s.end() - 1; ++iter)
 	{
@@ -25,6 +27,19 @@ bool string_ok(string s)
 	}
 
 	return true;
+}
+
+string string_mapped(const string& s, const char key1, const char key2)
+{
+	string result;
+
+	for (_R2(s))
+	{
+		if (*iter == key1 || *iter == key2)
+			result.push_back(*iter);
+	}
+
+	return result;
 }
 
 int twoCharacters(string s)
@@ -38,34 +53,25 @@ int twoCharacters(string s)
 		allchars.insert(*iter);
 	}
 
-	copy(_R1(allchars), _OS(char)); _CR;
+	if (allchars.size() <= 2) return 0;
+
+	// copy(_R1(allchars), _OS(char)); _CR;
 
 	// test all char pairs
 	for (_R2(allchars))
 	{
-		for (auto iter2 = allchars.begin(); iter2 != allchars.end(); ++iter2)
+		auto iter2 = allchars.begin();
+
+		if (iter2 == allchars.end())
+			break;
+		else
+			++iter2;
+
+		for (; iter2 != allchars.end(); ++iter2)
 		{
-			if (*iter == *iter2) continue;
+			string tested = string_mapped(s, *iter, *iter2);
 
-			set<char> test;
-			for (auto iter3 = allchars.begin(); iter3 != allchars.end(); ++iter3)
-			{
-				if (*iter3 == *iter) continue;
-				if (*iter3 == *iter2) continue;
-
-				test.insert(*iter3);
-			}
-
-			copy(_R1(test), _OS(char)); _CR;
-
-			string tested;
-			for (auto iter3 = s.begin(); iter3 != s.end(); ++iter3)
-			{
-				auto keyfound = find(_R1(test), *iter3);
-
-				if (keyfound == test.end())
-					tested.push_back(*iter3);
-			}
+			if (tested.size() <= 0) continue;
 
 			if (string_ok(tested))
 				result.push_back(tested.size());
