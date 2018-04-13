@@ -86,8 +86,8 @@ Mivec acm_team(const int n, vector<string>& topic)
 	}
 
 	int mymax = *max_element(_R1(answers));
-	auto mytest = [&](int i) {return i == mymax;};
-	int howmany = count_if(_R1(answers), mytest);
+	// auto mytest = [&](int i) {return i == mymax;};
+	int howmany = count_if(_R1(answers), bind2nd(equal_to<int>, mymax));
 	
 	return Mivec{ mymax, howmany };
 }
