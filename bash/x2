@@ -1,3 +1,10 @@
 myvar="x"
 myvar=myvar+{$1}
-echo $myvar
+
+numpars=$#
+echo $numpars
+
+if numpars -eq 1
+then
+    echo $myvar
+fi
