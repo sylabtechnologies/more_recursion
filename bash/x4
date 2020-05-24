@@ -1,0 +1,5 @@
+echo "Hello dude!"
+echo "What is your name?"
+read pers
+echo "Hello $pers"
+
