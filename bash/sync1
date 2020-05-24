@@ -1,9 +1,15 @@
 echo "go to chapter $CHAP, enter script number:"
 cd $CHAP
+
 read NUMBER
 NUMBER="x$NUMBER"
 rm $NUMBER
+
+echo off
 wget "https://raw.githubusercontent.com/sylabtechnologies/more_recursion/master/bash/$NUMBER"
+echo "status $?"
+echo on
+
 chmod +x $NUMBER
 ls
 
