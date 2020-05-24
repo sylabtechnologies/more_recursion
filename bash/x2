@@ -1,5 +1,5 @@
 myvar="x"
-mypar = $#
+mypar = "$#"
 echo "$mypar"
 
 if {$#} -eq 1
