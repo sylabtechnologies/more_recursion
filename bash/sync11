@@ -4,6 +4,6 @@ read NUMBER
 NUMBER="x$NUMBER"
 rm $NUMBER
 wget "https://raw.githubusercontent.com/sylabtechnologies/more_recursion/master/bash/$NUMBER"
-chmod +x x$1
+chmod +x $NUMBER
 ls
 
