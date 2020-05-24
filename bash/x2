@@ -1,0 +1,3 @@
+myvar="x"
+myvar=myvar+{$1}
+echo $myvar
