@@ -1,0 +1,13 @@
+echo "go to chapter $CHAP, enter script number:"
+cd $CHAP
+
+read NUMBER
+NUMBER="x$NUMBER"
+rm $NUMBER
+
+wget "https://raw.githubusercontent.com/sylabtechnologies/more_recursion/master/bash/$NUMBER" >/dev/null
+echo "status $?"
+
+chmod +x $NUMBER
+ls
+
