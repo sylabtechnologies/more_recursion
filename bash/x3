@@ -1,0 +1,10 @@
+myvar="x"
+mypar = $#
+echo "$mypar"
+echo "$myvar$1"
+
+if {$#} -eq 1
+then
+    myvar=myvar + $1
+    echo $myvar
+fi
