@@ -1,0 +1,5 @@
+cd $CHAP
+rm $1
+wget "https://raw.githubusercontent.com/sylabtechnologies/more_recursion/master/bash/$1"
+ls
+
