@@ -2,7 +2,7 @@ while true
 do
     echo "$PWD"
     echo "enter file name"
-    read $file
+    read file
 
     if [ -f $file]
     then
