@@ -1,5 +1,6 @@
 while true
 do
+    echo "$PWD"
     echo "enter file name"
     read $file
 
@@ -8,7 +9,6 @@ do
         echo "$file OK"
         break
     fi
-
 done
 
 
