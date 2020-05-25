@@ -2,12 +2,13 @@ if [ $# -eq 1 ]
 then
     echo "count words in $1"
 
+    declare -A words
     while IFS= read -r line
     do
         for w in $line
         do
             words[$w]=$(( words[$w] + 1 )) 
-            echo $w $words[$w]
+#            echo $w $words[$w]
         done
     done < $1
 
