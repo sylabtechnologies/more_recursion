@@ -1,13 +1,13 @@
 echo "go to chapter $CHAP, enter script number:"
-cd "$HOME/bin/$CHAP"
-
 read NUMBER
+
 NUMBER="x$NUMBER"
-rm $NUMBER
+rm "$HOME/bin/$CHAP/$NUMBER"
 
 wget "https://raw.githubusercontent.com/sylabtechnologies/more_recursion/master/bash/$NUMBER" > /dev/null 2>&1
 echo "status $?"
 
 chmod +x $NUMBER
-ls
+mv $NUMBER "$HOME/bin/$CHAP/$NUMBER"
+
 
