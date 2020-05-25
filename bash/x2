@@ -3,10 +3,8 @@ do
     echo "$PWD"
     echo "enter file name"
     read $file
- 
-    exists = test -f "$file"
 
-    if [ exists -eq 0]
+    if [ -f $file]
     then
         echo "$file OK"
         break
