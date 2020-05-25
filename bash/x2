@@ -1,13 +1,14 @@
 while true
 do
-    echo "$PWD"
     echo "enter file name"
     read file
 
     if [ -f "$file" ]
     then
-        echo "$file OK"
+        echo "$PWD/$file OK"
         break
+    else
+        echo "no $PWD/$file"
     fi
 done
 
