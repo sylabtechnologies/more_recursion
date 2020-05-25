@@ -6,6 +6,7 @@ then
     do
         for w in $line
         do
+            echo $w
             words[$w]=$(( words[$w] + 1 )) 
         done
     done < $1
