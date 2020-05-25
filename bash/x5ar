@@ -1,0 +1,14 @@
+while true
+do
+    echo "$PWD"
+    echo "enter file name"
+    read $file
+
+    if test -f "$file";
+    then
+        echo "$file OK"
+        break
+    fi
+done
+
+
