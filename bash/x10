@@ -1,7 +1,0 @@
-myvar="x"
-
-if [ $# -eq 1 ]
-then
-    myvar=myvar$1
-    echo $myvar
-fi
