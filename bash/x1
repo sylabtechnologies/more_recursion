@@ -1,10 +1,9 @@
 while true
 do
-    num=0
     echo "enter number"
     read $num
 
-    if [ $num -le 30 ] && [ $num -ge 20 ]
+    if (( "$num" <= 30 ))
     then
         echo "$num OK"
         break
@@ -12,3 +11,4 @@ do
 
 done
 
+# if (( ("$year" % 400) == "0" )) || (( ("$year" % 
