@@ -16,7 +16,4 @@ then
     done
 else
     echo "select file to count words"
-
-
-
-
+fi
