@@ -1,0 +1,2 @@
+printf -v MYTEMP "%010d\n%010d\n%010d\n%d010\n" $RANDOM, $RANDOM, $RANDOM, $RANDOM
+echo $MYTEMP
