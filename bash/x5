@@ -1,4 +1,2 @@
-MYTEMP  =""
 printf -v MYTEMP "%d/n%d/n%d/n%d/n" $RANDOM, $RANDOM, $RANDOM, $RANDOM
 echo $MYTEMP
-
