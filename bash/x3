@@ -6,7 +6,7 @@ then
     do
         for w in $line
         do
-            words[$w]=$(( {words[$w]}+1 )) 
+            words[$w]=$((words[$w]+1 )) 
         done
     done < $1
 
