@@ -1,0 +1,22 @@
+if [ $# -eq 1 ]
+then
+    echo "count words in $1"
+
+    while IFS= read -r line
+    do
+        for w in $line
+        do
+            let words[$w]=${words[$w]}+1
+        done
+    done < $1
+
+    for key in ${!words[@]}
+    do
+        echo $key ${words[$key]}
+    done
+else
+    echo "select file to count words"
+
+
+
+
