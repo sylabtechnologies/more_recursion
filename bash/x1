@@ -1,7 +1,13 @@
 while true
 do
+    echo "enter number"
+    read $num
 
-echo "enter number"
+    if [ $num -lt 31 ] && [ $num -gt 19 ]
+    then
+        echo "$num OK"
+        break
+    fi
 
 done
 
