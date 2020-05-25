@@ -8,14 +8,14 @@ then
         for w in $line
         do
             words[$w]=$(( words[$w] + 1 ))
-            echo $w $words[$w]
+#            echo $w $words[$w]
         done
     done < $1
 
     for key in ${!words[@]}
     do
         echo $key ${words[$key]}
-    done
+    done | sort -rn -k2   
 else
     echo "select file to count words"
 fi
