@@ -1,2 +1,0 @@
-printf -v MYTEMP "%010d\n" $RANDOM $RANDOM $RANDOM $RANDOM
-echo $MYTEMP

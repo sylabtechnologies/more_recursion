@@ -1,4 +1,0 @@
-mkdir "$HOME/bpl"
-mkdir "$HOME/bpl/bin"
-mkdir "$HOME/bpl/scripts"
-echo {$$}

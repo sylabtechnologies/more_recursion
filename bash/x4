@@ -1,7 +1,0 @@
-rm temp
-echo "$RANDOM" > temp
-echo "$RANDOM" >> temp
-echo "$RANDOM" >> temp
-echo "$RANDOM" >> temp
-cat temp
-
