@@ -1,5 +1,5 @@
 echo "go to chapter $CHAP, enter script number:"
-cd $CHAP
+cd "$HOME/bin/$CHAP"
 
 read NUMBER
 NUMBER="x$NUMBER"
