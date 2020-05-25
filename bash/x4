@@ -1,7 +1,7 @@
 rm temp
-echo "$RANDOM\n" > temp
-echo "$RANDOM\n" >> temp
-echo "$RANDOM\n" >> temp
-echo "$RANDOM\n" >> temp
+echo "$RANDOM" > temp
+echo "$RANDOM" >> temp
+echo "$RANDOM" >> temp
+echo "$RANDOM" >> temp
 cat temp
 
