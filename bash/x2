@@ -4,7 +4,7 @@ do
     echo "enter file name"
     read file
 
-    if [ -f $file]
+    if [ -f "$file" ]
     then
         echo "$file OK"
         break

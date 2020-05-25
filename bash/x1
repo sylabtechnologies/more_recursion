@@ -3,7 +3,7 @@ do
     echo "enter number"
     read num
 
-    if [ $((num)) -le 30 ]
+    if [ $((num)) -le 30 ] && [ $((num)) -ge 20 ]
     then
         echo "$num OK"
         break
