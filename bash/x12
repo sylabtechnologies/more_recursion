@@ -1,9 +1,7 @@
-RES=""
-
-while $TRUE
+while true
 do
   read FOLDER
-  if [ $? -eq 0 ]
+  if [ -d $FOLDER -eq 0 ]
   then
     echo "duplicate as $FOLDER (b)"
   else
