@@ -2,7 +2,9 @@ Absolute()
 {
     if (( $1 < 0))
     then
+        return $(( - $1 ))
     else
+        return $1
     fi
 }
 
