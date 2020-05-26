@@ -6,7 +6,7 @@ function seek()
     if [ $var -eq 0 ]
     then
         echo "$1"
-        var=$( grep "$MYGREP" $1 ) 
+        var=$( grep -n "$MYGREP" $1 ) 
         echo "$var"
     fi
 }
