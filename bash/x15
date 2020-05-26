@@ -2,13 +2,7 @@
 
 function seek()
 {
-    var=$( grep "$MYGREP" $1)
-    num=$(echo "$var" | wc -l)
-
-    if (( $num > 0 ))
-    then
-        echo $1
-    fi
+    grep "power"
 }
 
 function traverse()
