@@ -1,0 +1,12 @@
+RES=""
+
+while $TRUE
+do
+  read FOLDER
+  if [ $? -eq 0 ]
+  then
+    echo "duplicate as $RESb"
+  else
+    break
+  fi
+done
