@@ -5,7 +5,7 @@ do
   read FOLDER
   if [ $? -eq 0 ]
   then
-    echo "duplicate as $RESb"
+    echo "duplicate as $FOLDER (b)"
   else
     break
   fi
