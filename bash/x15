@@ -2,7 +2,13 @@
 
 function seek()
 {
-    grep "power" $1
+    var=$( grep "$MYGREP" $1 > /dev/null 2>&1 ; echo $?)
+    if [ $var -eq 0 ]
+    then
+        var=$( grep "$MYGREP" $1 ) 
+        num=$(echo "$var" | wc -l)
+        echo "$1 : $num occurence(s)"
+    fi
 }
 
 function traverse()
