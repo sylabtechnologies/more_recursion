@@ -5,13 +5,14 @@ do
   then
     OLDFOLDER="$PWD/$FOLDER"
     NEWFOLDER="$OLDFOLDER"b
-    echo "duplicate as $NEWFOLDER"
+
+    echo "copy to $NEWFOLDER :"
 
     mkdir $NEWFOLDER
     declare -a files=($(ls $OLDFOLDER))
     for f in  ${files[@]}
     do
-      cp "$OLDFOLDER/$f $NEWFOLDER/$f"
+      cp "$OLDFOLDER/$f $NEWFOLDER"
     done
 
   else
