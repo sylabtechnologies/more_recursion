@@ -1,0 +1,12 @@
+RES=""
+
+while $TRUE
+do
+  read FOLDER
+  if [ $? -eq 0 ]
+  then
+    echo "duplicate as $FOLDER (b)"
+  else
+    break
+  fi
+done
