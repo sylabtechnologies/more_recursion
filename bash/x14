@@ -1,0 +1,6 @@
+echo "absolute sum :"
+
+for f in  ${$@}
+do
+    echo $f
+done
