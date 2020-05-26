@@ -7,10 +7,11 @@ do
     NEWFOLDER="$OLDFOLDER"b
     echo "duplicate as $NEWFOLDER"
 
+    mkdir $NEWFOLDER
     declare -a files=($(ls $OLDFOLDER))
     for f in  ${files[@]}
     do
-      echo $f
+      cp "$OLDFOLDER/$f $NEWFOLDER/$f"
     done
 
   else
