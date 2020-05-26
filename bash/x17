@@ -1,0 +1,15 @@
+RES=""
+
+while $TRUE
+do
+  read NEXT
+  if [ $? -eq 0 ]
+  then
+    RES="$RES $NEXT"
+  else
+    break
+  fi
+done
+
+echo $RES
+
