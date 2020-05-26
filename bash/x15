@@ -28,4 +28,12 @@ function main() {
     traverse "$1"
 }
 
-main "$PWD"
+if [ $# -eq 1 ]
+then
+    export MYGREP="$1"
+    main "$PWD"
+    unset MYGREP
+else
+    echo "provide one key"
+fi
+
