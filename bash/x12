@@ -12,7 +12,7 @@ do
     declare -a files=($(ls $OLDFOLDER))
     for f in  ${files[@]}
     do
-      cp "$OLDFOLDER/$f $NEWFOLDER/$f"
+      cp "$OLDFOLDER/$f" "$NEWFOLDER/$f"
     done
 
   else
