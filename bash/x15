@@ -1,26 +1,26 @@
 # grep all
-SearchDir()
-{
-    mydir=$PWD
-    declare -a files=($(ls $1))
 
-    for f in  ${files[@]}
+function seek()
+{
+    var=$( grep "$MYGREP" $1)
+    echo "$var" | wc -l
+}
+
+function traverse()
+{
+    for file in "$1"/*
     do
-        if [ -f $f ]
+        if [ d "${file}" ]
         then
-            grep "$MYGREP" $f
-            if [ $? -eq 0 ]
-            then
-                echo "$PWD\$f"
-            fi
-        elif [ -d $f ]
-        then
-            cd $f
-            SearchDir $f
-            cd $mydir
+            traverse "${file}"
+        else
+            seek $file
         fi
     done
 }
 
-SearchDir $PWD
+function main() {
+    traverse "$PWD"
+}
 
+main "$1"
