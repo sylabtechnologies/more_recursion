@@ -1,14 +1,26 @@
-# grep
+# grep all
+SearchDir()
+{
+    mydir=$PWD
+    declare -a files=($(ls $1))
 
-declare -a files=($(ls $PWD))
-for f in  ${files[@]}
-do
-    if [ -f $f ]
-    then
-        grep "echo" $f
-        if [ $? -eq 0 ]
+    for f in  ${files[@]}
+    do
+        if [ -f $f ]
         then
-            echo "$PWD/$f"
+            grep "$MYGREP" $f
+            if [ $? -eq 0 ]
+            then
+                echo "$PWD\$f"
+            fi
+        elif [ -d $f ]
+        then
+            cd $f
+            SearchDir $f
+            cd $mydir
         fi
-    fi
-done
+    done
+}
+
+SearchDir $PWD
+
