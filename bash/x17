@@ -34,6 +34,7 @@ then
     export MYGREP="$1"
     main "$PWD"
     unset MYGREP
+    echo "."
 else
     echo "provide one key"
 fi
