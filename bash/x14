@@ -17,7 +17,7 @@ do
     echo $f
     Absolute $f
     ret=$?
-    sum=$(( $sum + $red))
+    sum=$(( $sum + $ret))
 done
 
 echo $sum
