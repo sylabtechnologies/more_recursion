@@ -5,7 +5,7 @@ function seek()
     var=$( grep "$MYGREP" $1 > /dev/null 2>&1 ; echo $?)
     if [ $var -eq 0 ]
     then
-        echo "/n$1"
+        echo "'\'n$1"
         var=$( grep -n "$MYGREP" $1 ) 
         echo "$var"
     fi
