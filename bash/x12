@@ -4,6 +4,13 @@ do
   if [ -d $FOLDER ]
   then
     echo "duplicate as $FOLDER (b)"
+
+    declare -a files=($(ls $PWD/$FOLDER))
+    for f in  ${files[@]}
+    do
+      echo $f
+    done
+
   else
     break
   fi
