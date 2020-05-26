@@ -8,7 +8,7 @@ do
         grep "echo" $f
         if [ $? -eq 0 ]
         then
-            echo "$PWD\$f"
+            echo "$PWD/$f"
         fi
     fi
 done
