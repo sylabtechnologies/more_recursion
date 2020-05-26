@@ -1,6 +1,21 @@
+Absolute()
+{
+    if (( $1 < 0))
+    then
+    else
+    fi
+}
+
 echo "absolute sum :"
+
+sum=0
 
 for f in $@
 do
     echo $f
+    Absolute $f
+    sum= $(( $sum + $?))
 done
+
+echo $sum
+
