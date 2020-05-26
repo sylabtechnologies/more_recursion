@@ -10,7 +10,7 @@ function traverse()
 {
     for file in "$1"/*
     do
-        if [ d "${file}" ]
+        if [ -d "${file}" ]
         then
             traverse "${file}"
         else
