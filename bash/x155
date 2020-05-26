@@ -1,0 +1,31 @@
+# grep all
+
+function seek()
+{
+    var=$( grep "$MYGREP" $1)
+    num=$(echo "$var" | wc -l)
+
+    if (( $num > 0 ))
+    then
+        echo $1
+    fi
+}
+
+function traverse()
+{
+    for file in "$1"/*
+    do
+        if [ -d "${file}" ]
+        then
+            traverse "${file}"
+        else
+            seek $file
+        fi
+    done
+}
+
+function main() {
+    traverse "$PWD"
+}
+
+main "$1"
