@@ -30,6 +30,7 @@ function main() {
 
 if [ $# -eq 1 ]
 then
+    echo "look for $1"
     export MYGREP="$1"
     main "$PWD"
     unset MYGREP
