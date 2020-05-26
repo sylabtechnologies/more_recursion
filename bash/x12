@@ -3,9 +3,11 @@ do
   read FOLDER
   if [ -d $FOLDER ]
   then
-    echo "duplicate as $FOLDER (b)"
+    OLDFOLDER="$PWD/$FOLDER"
+    NEWFOLDER="$OLDFOLDER"b
+    echo "duplicate as $NEWFOLDER"
 
-    declare -a files=($(ls $PWD/$FOLDER))
+    declare -a files=($(ls $OLDFOLDER))
     for f in  ${files[@]}
     do
       echo $f
