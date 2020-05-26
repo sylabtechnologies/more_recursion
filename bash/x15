@@ -2,7 +2,7 @@
 
 function seek()
 {
-    grep "power"
+    grep "power" $1
 }
 
 function traverse()
