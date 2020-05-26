@@ -8,10 +8,7 @@ Absolute()
     fi
 }
 
-echo "absolute sum :"
-
 sum=0
-
 for f in $@
 do
     echo $f
@@ -20,5 +17,5 @@ do
     sum=$(( $sum + $ret))
 done
 
-echo $sum
+echo "absolute sum : $sum"
 
