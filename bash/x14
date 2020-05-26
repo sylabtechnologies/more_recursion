@@ -16,7 +16,8 @@ for f in $@
 do
     echo $f
     Absolute $f
-    sum= $(( $sum + $?))
+    ret=$?
+    sum=$(( $sum + $red))
 done
 
 echo $sum
