@@ -1,8 +1,0 @@
-
-oper1="scale=4; "
-
-for x in $@
-do
-    oper1=$oper1$x
-    echo $oper1
-done

@@ -1,3 +1,0 @@
-oper1="${@}"
-echo $oper1
-bc <<< "scale=4; $oper1"

@@ -1,5 +1,0 @@
-if [ -n "$1" ]
-then
-    echo "found $1"
-fi
-
