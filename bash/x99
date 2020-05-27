@@ -34,6 +34,7 @@ do
 
     file=${lines[$inx]}
     timestamp="${lines[$((inx+1))]} ${lines[$((inx+2))]}"
+    len1=${#timestamp}
 
     printf -v filenum "%d" $(( $count + 1 ))
     echo "test $filenum"
@@ -41,12 +42,14 @@ do
     if [ -f $file ]
     then
         filestamp=$( stat -c %y "$file" | cut -c 1-19 )
+        len1=${#filestamp}
 
         if [ "$filestamp" != "$timestamp" ]
         then
             rm $file
             upload $filenum
             mv $filenum $file
+            touch --date=\'$timestamp\' $file
             echo $timestamp
         fi
     else
