@@ -36,7 +36,8 @@ do
         if [ $filestamp -ne $timestamp ]
         then
             rm $file
-            wget --timeout=2 --tries=1 "http://$myserver/$count" -O $file > /dev/null 2>&1
+            filenum = $(( count + 1 ))
+            wget --timeout=2 --tries=1 "http://$myserver/$filenum" -O $file > /dev/null 2>&1
             echo $file
         fi
     else
