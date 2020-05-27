@@ -20,17 +20,18 @@ len=${#lines[@]}
 while $TRUE
 do
     inx=$(( count*3 ))
+    if [ $((inx)) -ge $((len)) ]
+    then
+        break
+    fi
+
     file=${lines[$inx]}
     echo $file
+
+    count=$((count + 1))
 
 #    if [ $((count)) -ge $((len)) ]
 #    echo $count
 #    echo $len
 
-    count=$((count + 1))
-
-    if [ $((count)) -ge $((len)) ]
-    then
-        break
-    fi
 done
