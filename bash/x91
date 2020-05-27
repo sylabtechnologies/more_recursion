@@ -19,7 +19,6 @@ function upload()
 upload 0
 cd "$HOME/bin/temp"
 
-IFS=" "
 declare -a lines=($(cat 0))
 rm 0
 
