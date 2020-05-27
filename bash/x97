@@ -4,6 +4,7 @@
 function upload()
 {
     myserver="10.0.0.116"
+    cd "$HOME/bin/temp"
 
     if [ -f $1 ]
     then
@@ -16,8 +17,6 @@ function upload()
     rm $1
     return 0
 }
-
-cd "$HOME/bin/temp"
 
 upload 0
 declare -a lines=($(cat 0))
