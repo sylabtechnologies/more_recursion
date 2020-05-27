@@ -32,10 +32,18 @@ do
     if [ -f $file ]
     then
         filestamp=$( stat -c %y "$file" | cut -c 1-19 )
-        echo $filestamp
+
+        if [ $filestamp -ne $timestamp ]
+        then
+            rm $file
+            wget --timeout=2 --tries=1 "http://$myserver/$count" -O $file > /dev/null 2>&1
+            echo $file
+        fi
     else
         echo $timestamp
+        wget --timeout=2 --tries=1 "http://$myserver/$count" -O $file > /dev/null 2>&1
     fi
 
     count=$((count + 1))
+    echo $count
 done
