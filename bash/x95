@@ -31,8 +31,9 @@ do
     if [ -f $file ]
     then
         filestamp=$( stat -c %y "$file" | cut -c 1-19 )
-        filenum=$(( $count + 1 ))
-        echo "#$filenum"
+
+        printf -v filenum "%d" $(( $count + 1 ))
+        echo "test $filenum"
 
         if [ $filestamp -ne $timestamp ]
         then
