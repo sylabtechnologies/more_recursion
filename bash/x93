@@ -31,7 +31,7 @@ do
 
     if [ -f $file ]
     then
-        filestamp=$(( "ls -l --time-style=='+%Y-%m-%d %H:%M:%S'" $file | cut -c 31-50 ))
+        filestamp=$(( stat -c %y $file | cut -c 1-19 ))
         echo $filestamp
     else
         echo $timestamp
