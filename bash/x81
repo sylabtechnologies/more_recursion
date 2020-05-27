@@ -1,0 +1,43 @@
+## mirror tinyserver.java
+## FOR JAVA FILES = AGAIN FIND SIMPLEST ENCAPSULATION!
+
+myserver="10.0.0.116"
+
+cd "$HOME/bin/temp"
+
+if [ -f "0" ]
+then
+    rm 0
+fi
+
+wget --timeout=2 --tries=1 "http://$myserver/0" > /dev/null 2>&1
+echo "status $?"
+
+declare -a lines=($(cat 0))
+
+count=0
+len=${#lines[@]}
+while $TRUE
+do
+    inx=$(( count*3 ))
+    if [ $((inx)) -ge $((len)) ]
+    then
+        break
+    fi
+
+    file=${lines[$inx]}
+    echo $file
+    timestamp="${lines[$((inx+1))]} ${lines[$((inx+2))]}"
+
+    if [ -f $file ]
+    then
+        filestamp=$(( ls -l --time-style="+%Y-%m-%d %H:%M:%S" $file | cut -c 31-50 ))
+        echo $filestamp
+    else
+        echo $timestamp
+    fi
+
+    count=$((count + 1))
+done
+
+-rwxrwxr-x 1 sysguy sysguy 26 2020-05-26 15:26:03 x2
