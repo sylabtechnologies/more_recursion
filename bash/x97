@@ -19,6 +19,7 @@ function upload()
 }
 
 upload 0
+cd "$HOME/bin/temp"
 declare -a lines=($(cat 0))
 
 count=0
