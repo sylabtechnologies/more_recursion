@@ -39,5 +39,3 @@ do
 
     count=$((count + 1))
 done
-
--rwxrwxr-x 1 sysguy sysguy 26 2020-05-26 15:26:03 x2
