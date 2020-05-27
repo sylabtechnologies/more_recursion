@@ -32,7 +32,7 @@ do
     if [ -f $file ]
     then
         filestamp=$( stat -c %y "$file" | cut -c 1-19 )
-        filenum = $(( count + 1 ))
+        filenum=$(( count + 1 ))
 
         if [ $filestamp -ne $timestamp ]
         then
