@@ -1,0 +1,15 @@
+## mirror tinyserver.java
+myserver="http://10.0.0.116/"
+## FOR JAVA FILES = AGAIN FIND SIMPLEST ENCAPSULATION!
+
+cd "$HOME/bin/temp"
+rm 0
+wget "$myserver0"
+
+declare -a lines=($(cat 0))
+
+for ln in  ${lines[@]}
+do
+    echo $ln
+done
+
