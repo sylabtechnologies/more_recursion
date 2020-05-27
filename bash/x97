@@ -42,7 +42,7 @@ do
     then
         filestamp=$( stat -c %y "$file" | cut -c 1-19 )
 
-        if [ $filestamp -ne $timestamp ]
+        if [ "$filestamp" != "$timestamp" ]
         then
             rm $file
             upload $filenum
