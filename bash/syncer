@@ -1,6 +1,7 @@
-if [ $# -ne 2]
+if [ $# -ne 2 ]
 then
     echo "syncer command logfile"
+    exit
 fi
 
 while $TRUE
