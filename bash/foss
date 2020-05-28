@@ -6,6 +6,6 @@ do
         exit
     fi
 
-    sum=$(( $sum + $x ))
+    sum=$( expr $sum + $x )
 done
 echo $sum
