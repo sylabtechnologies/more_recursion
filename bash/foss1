@@ -1,0 +1,5 @@
+while read x
+do
+    count=$(( count + 1))
+    echo $count $x
+done
