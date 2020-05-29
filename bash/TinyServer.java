@@ -1,7 +1,13 @@
 /**
  ** to use: http://n.n.n.n/0 or file number
- ** hardcode MYDIR
- * run in parallel w/ executor/thread pool
+ * 
+ * 1. https://github.com/patniemeyer/learningjava/tree/master/examples/ch13
+ * 
+ * 2. the executor/threadpool construct =
+ * == that parallel (aka concurrent) thread exection, #N
+ * 
+ * 3. just like w/ neat.java = JUST LIST MAJOR PROCEDURAL STEPS AND OBJECTS
+ * (like read line, separate into parts, implement an algo, whoa!)
  * 
  */
 package tinyserver;
@@ -51,6 +57,7 @@ class TinyHttpConnection implements Runnable
             for(int read; (read = fis.read( data )) > -1; )
                 out.write( data, 0, read );
             out.flush();
+            out.close();
             return;
         }
         
@@ -66,6 +73,7 @@ class TinyHttpConnection implements Runnable
             out.write(13);
             out.write(10);
         }
+        
         out.flush();
     }
     
@@ -100,6 +108,7 @@ class TinyHttpConnection implements Runnable
                 if (i > 0 && i <= workDir.length) printFile(i, out);
             }
 
+            out.close();
             client.close();
             
         }
